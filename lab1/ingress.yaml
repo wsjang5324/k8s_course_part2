@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: loadbalancing
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /
+          backend:
+            serviceName: sp-svc
+            servicePort: 8080
+        - path: /customer
+          backend:
+            serviceName: ct-svc
+            servicePort: 8080
+        - path: /order
+          backend:
+            serviceName: od-svc
+            servicePort: 8080

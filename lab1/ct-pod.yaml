@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ct-pod
+  labels:
+    category: customer
+spec:
+  containers:
+  - name: ct
+    image: ghcr.io/wsjang5324/customer

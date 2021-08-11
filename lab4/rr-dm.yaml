@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rr-dm
+  labels:
+    app: rr-dm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rr-dm
+  template:
+    metadata:
+      labels:
+        app: rr-dm
+    spec:
+      containers:
+        - name: rr-dm
+          image: nginx
